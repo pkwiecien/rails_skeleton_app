@@ -1,6 +1,16 @@
 RailsSkeletonApp::Application.routes.draw do
 
-  get "static_pages/home"
+  namespace :api do
+    # API v1 Routes
+    namespace :v1, :defaults => { :format => 'json' } do
+      resources :users
+    end
+  end
+
+  resources :users
+
+  root "static_pages#home"
+  match '/signup',  to: 'users#new', via: 'get'
   match '/help', to: 'static_pages#help', via: 'get'
   match '/about', to: 'static_pages#about', via: 'get'
   match '/contact', to: 'static_pages#contact', via: 'get'

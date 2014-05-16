@@ -50,6 +50,8 @@ end
 # Use ActiveModel has_secure_password
 gem 'bcrypt'
 
+gem 'active_model_serializers'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
