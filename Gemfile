@@ -3,11 +3,22 @@ ruby '2.0.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1'
+gem 'bootstrap-sass', '2.3.2.0'
+gem 'sprockets', '2.11.0'
+
+group :development, :test do
+  gem 'rspec-rails', '2.13.1'
+end
 
 group :development, :production do
   # postgres database
   gem 'pg'
   gem 'rails_12factor'
+end
+
+group :test do
+  gem 'selenium-webdriver', '2.35.1'
+  gem 'capybara', '2.1.0'
 end
 
 # Use SCSS for stylesheets
@@ -47,3 +58,9 @@ gem 'bcrypt'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+
+
+# USEFUL GEMS
+# Enables easy Google map + overlays creation, https://github.com/apneadiving/Google-Maps-for-Rails
+# gem 'gmaps4rails'
